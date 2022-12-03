@@ -8,9 +8,9 @@ const insert = (content) => {
   }
   const element = elements[1];
   const txtToRemove = element.childNodes[0];
-  console.log(txtToRemove, "<--- txt to remove")
+  //console.log(txtToRemove, "<--- txt to remove")
   //txtToRemove.remove()
-  console.log(txtToRemove, "<--- should be empty")
+  //console.log(txtToRemove, "<--- should be empty")
   element.value +=content;
   return true;
 };
