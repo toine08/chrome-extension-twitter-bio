@@ -37,8 +37,8 @@ const generate = async (prompt) => {
     body: JSON.stringify({
       model: "text-davinci-003",
       prompt: prompt,
-      max_tokens: 350,
-      temperature: 0.7,
+      max_tokens: 135,
+      temperature: 0.75,
     }),
   });
 
@@ -52,11 +52,11 @@ const generate = async (prompt) => {
 const generateCompletionAction = async (info) => {
   try {
 
-    sendMessage('generating...');
+    //sendMessage(' generating...');
     const { selectionText } = info;
     const basePromptPrefix = `
-      Improve this bio with humour:\n
-      `;
+    Write my a bio of only 160 character with no hashtag for my twitter account. With this bio: \n
+      the bio: ${selectionText}`;
 
     // Add this to call GPT-3
     const baseCompletion = await generate(
